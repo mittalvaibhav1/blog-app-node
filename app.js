@@ -1,3 +1,6 @@
-const uname = "Jake";
-console.log("Hey", uname);
+const greet = (name) => {
+    console.log("Hey!", name);
+}
+greet("Jake");
+greet("Amy");
 
