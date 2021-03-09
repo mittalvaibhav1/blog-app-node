@@ -2,7 +2,7 @@ console.log("!--------------------------------!");
 const {users, groups} = require('./modules/users');
 console.log("!--------------------------------!");
 const { themes } = require('./modules/themes');
-console.log("Themese", themes) // RETURNING MODFIED ARRAY!!!!!!!!!!!!!!
+console.log("Themese", themes) // RETURNING MODIFIED ARRAY!!!!!!!!!!!!!!
 console.log("!--------------------------------!");
 
 // The require statment caches its result!!! so initalization code will run only once!! 
