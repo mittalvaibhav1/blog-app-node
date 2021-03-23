@@ -1,4 +1,6 @@
-const fs = require('fs');
+const fs = require('fs'); // file system
+
+// We pass relative paths here
 
 // To read a file fs.readFile(path, callback(err, data));
 // Async function!
@@ -7,7 +9,7 @@ fs.readFile('./files/names.txt', (err, data) => {
         console.log("Error: ", err.message);
     }
     else {
-        console.log(data.toString());
+        console.log(data.toString()); // By default returns a buffer so we convert it to a string
     }
 });
 
@@ -28,12 +30,20 @@ fs.writeFile('./files/newNames.txt', text, (err) => {
 // To create a new directory fs.mkdir(path + name, callback(error))
 // async
 
-fs.mkdir('./test', (err) => {
-    if(err) {
-        console.log("Error: ", err.message);
-    }
-    else {
-        console.log("Directory Created!");
-    }
-})
+// fs.existsSync(pathname)
+// checks if the file exists or not
+
+if(!fs.existsSync('./test')) { 
+    fs.mkdir('./test', (err) => {
+        if(err) {
+            console.log("Error: ", err.message);
+        }
+        else {
+            console.log("Directory Created!");
+        }
+    });
+}
+
+
+
 
