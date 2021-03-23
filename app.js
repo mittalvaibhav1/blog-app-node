@@ -37,6 +37,7 @@ fs.writeFile('./files/newNames.txt', text, (err) => {
 
 // fs.rmdir(path, callback(err)) used to delete a directory
 // Async!!
+// Cannot delete a directory if it's not empty!
 
 if(!fs.existsSync('./test')) { 
     fs.mkdir('./test', (err) => {
