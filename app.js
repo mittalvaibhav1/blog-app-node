@@ -1,17 +1,19 @@
+// STREAMS ARE BETTER FOR LARGER DATA FILES!!!
+
 const fs = require('fs'); // file system
 
 // We pass relative paths here
 
 // To read a file fs.readFile(path, callback(err, data));
 // Async function!
-fs.readFile('./files/names.txt', (err, data) => {
-    if(err) {
-        console.log("Error: ", err.message);
-    }
-    else {
-        console.log(data.toString()); // By default returns a buffer so we convert it to a string
-    }
-});
+// fs.readFile('./files/names.txt', (err, data) => {
+//     if(err) {
+//         console.log("Error: ", err.message);
+//     }
+//     else {
+//         console.log(data.toString()); // By default returns a buffer so we convert it to a string
+//     }
+// });
 
 const text = "Shweta, Pankhuri, Mira, Megha, Monica, Shabnam";
 
@@ -28,10 +30,13 @@ fs.writeFile('./files/newNames.txt', text, (err) => {
 });
 
 // To create a new directory fs.mkdir(path + name, callback(error))
-// async
+// Async
 
 // fs.existsSync(pathname)
 // checks if the file exists or not
+
+// fs.rmdir(path, callback(err)) used to delete a directory
+// Async!!
 
 if(!fs.existsSync('./test')) { 
     fs.mkdir('./test', (err) => {
@@ -54,6 +59,20 @@ else {
     })
 }
 
+
+// fs.unlink(path, callback(err)) used to delete a file
+// Async!!
+
+if(fs.existsSync('./files/names.txt')) {
+    fs.unlink('./files/names.txt', (err) => {
+        if(err) {
+            console.log("Error: ", err.message);
+        }
+        else {
+            console.log("File Deleted!");
+        }
+    })
+}
 
 
 
