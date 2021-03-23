@@ -43,6 +43,16 @@ if(!fs.existsSync('./test')) {
         }
     });
 }
+else {
+    fs.rmdir('./test', (err) => {
+        if(err) {
+            console.log("Error: ", err.message);
+        }
+        else {
+            console.log("Directory deleted!");
+        }
+    })
+}
 
 
 
