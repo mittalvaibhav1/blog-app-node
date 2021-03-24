@@ -6,6 +6,12 @@ const fs = require('fs');
 const readStream = fs.createReadStream('./files/largeData.txt', { encoding: 'utf-8' });
 const writeStream = fs.createWriteStream('./files/output.txt');
 
-readStream.on('data', (chunk) => {
-    writeStream.write(chunk);
-})
+// readStream.on('data', (chunk) => {
+//     writeStream.write(chunk);
+// })
+
+// we can also directly pipe data from read stream to a write stream using the pipe function
+
+readStream.pipe(writeStream);
+
+// same as above function!
