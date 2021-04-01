@@ -4,7 +4,8 @@ const http = require("http");
 // http.createServer(callback(request, response))
 // This callback runs everytime you make a request to the server.
 const server = http.createServer((request, response) => {
-    console.log("Request has been made!");
+    console.log(request.url);
+    console.log(request.method);
 });
 
 // To make our server listen to requests.
