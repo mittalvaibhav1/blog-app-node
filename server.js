@@ -3,6 +3,11 @@ const express = require("express");
 // Create express app
 const app = express();
 
+// register view engine
+
+app.set("view engine", "ejs");
+// app.set("views", "new name"); To change folder name for views
+
 // Listen for requests
 const server = app.listen(3000, "localhost", () => {
     console.log("Listening to requests on port 3000...");
