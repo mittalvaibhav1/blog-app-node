@@ -9,7 +9,7 @@ const server = app.listen(3000, "localhost", () => {
 });
 
 app.get("/", (req, res) => {
-    res.send("Hello");
+    res.sendFile("./views/index.html", { root: __dirname });
 });
 
 app.get("/about", (req, res) => {
@@ -18,7 +18,7 @@ app.get("/about", (req, res) => {
     res.sendFile("./views/about.html", {root : __dirname});
 });
 
-app.get("/ok", (req, res) => {
-    res.send("ok");
+app.get("/about-us", (req, res) => {
+    res.redirect("about");
 });
 
