@@ -1,51 +1,13 @@
-const http = require("http");
-const fs = require("fs");
-const _ = require("lodash");
+const express = require("express");
 
-const server = http.createServer((req, res) => {
+// Create express app
+const app = express();
 
-    //lodash
-    const num = _.random(0, 20);
-    console.log(num);
-
-    const greet = _.once(() => {
-        console.log("YOU CAN ONLY RUN ME ONCE");
-    });
-
-    console.log("Request Made", req.method, req.url);
-    res.setHeader("Content-Type", "text/html");
-    let path = "./views/";
-    switch(req.url) {
-        case "/":
-            path += "index.html";
-            res.statusCode = 200;
-            break;
-        case "/about":
-            path += 'about.html';
-            res.statusCode = 200;
-            break;
-        case "/about-me":
-            res.statusCode = 301;
-            res.setHeader("Location", "about");
-            res.end();
-            break;    
-        default:
-            path += "404.html";
-            res.statusCode = 404;
-            break;        
-    }
-    fs.readFile(path, (err, data) => {
-        if(err) {
-            console.log(err);
-            res.end();
-        }
-        else {
-            res.write(data);
-            res.end();
-        }
-    } )
+// Listen for requests
+const server = app.listen(3000, "localhost", () => {
+    console.log("Listening to requests on port 3000...");
 });
 
-server.listen(3000, "localhost", () => {
-    console.log("This server is listening on port 3000...");
-})
+app.get("/", (req, res) => {
+    res.json("Hello");
+});
