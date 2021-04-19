@@ -13,7 +13,9 @@ app.get("/", (req, res) => {
 });
 
 app.get("/about", (req, res) => {
-    res.send("about");
+    // res.sendFile(__dirname + "/views/about.html");
+    // or
+    res.sendFile("./views/about.html", {root : __dirname});
 });
 
 app.get("/ok", (req, res) => {
