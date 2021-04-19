@@ -8,6 +8,10 @@ const server = http.createServer((req, res) => {
     const num = _.random(0, 20);
     console.log(num);
 
+    const greet = _.once(() => {
+        console.log("YOU CAN ONLY RUN ME ONCE");
+    });
+
     console.log("Request Made", req.method, req.url);
     res.setHeader("Content-Type", "text/html");
     let path = "./views/";
