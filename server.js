@@ -9,5 +9,14 @@ const server = app.listen(3000, "localhost", () => {
 });
 
 app.get("/", (req, res) => {
-    res.json("Hello");
+    res.send("Hello");
 });
+
+app.get("/about", (req, res) => {
+    res.send("about");
+});
+
+app.get("/ok", (req, res) => {
+    res.send("ok");
+});
+
