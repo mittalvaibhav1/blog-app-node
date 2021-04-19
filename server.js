@@ -18,7 +18,15 @@ app.get("/about", (req, res) => {
     res.sendFile("./views/about.html", {root : __dirname});
 });
 
+// Redirect 
 app.get("/about-us", (req, res) => {
     res.redirect("about");
 });
+
+// Fires for every page if the code reaches this position
+app.use((req, res) => {
+    res.status(404).sendFile('./views/404.html', { root: __dirname })
+})
+
+
 
