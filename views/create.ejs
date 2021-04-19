@@ -7,10 +7,8 @@
     <title>Blog Site | <%= title %></title>
 </head>
 <body>
-    <% const name = "Hellooooooooo" %>
     <nav>
         <div class="site-title">
-            <p> <%= name %></p>
             <a href="/"><h1>Blog Site</h1></a>
             <p>A Blog Sharing Site</p>
         </div>
@@ -20,17 +18,16 @@
             <li><a href="/blogs/create">New Blog</a></li>
         </ul>
     </nav>
-    <div class="blogs content">
-        <h2>All Blogs</h2>
-        <% if(blogs.length > 0) { %>
-            <% blogs.forEach(blog => { %>
-                <h3 class="title"><%= blog.title %></h3>
-                <p class="snippet"><%= blog.snippet %></p>
-            <% }) %>    
-        <% } else { %>
-            <p><%= "No blogs to display" %></p>
-        <% } %>    
-
+    <div class="create-blog content">
+        <form>
+            <label for="title">Blog title:</label>
+            <input type="text" id="title" required>
+            <label for="snippet">Blog Snippet:</label>
+            <input type="text" id="snippet" required>
+            <label for="body">Blog Body:</label>
+            <textarea id="body" required></textarea>
+            <button>Submit</button>
+        </form>
     </div>
 </body>
 </html>
