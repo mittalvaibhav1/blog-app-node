@@ -1,4 +1,5 @@
 const express = require("express");
+const morgan = require("morgan");
 
 // Create express app
 const app = express();
@@ -15,13 +16,11 @@ const server = app.listen(3000, "localhost", () => {
 
 // Logger Middleware 
 
-app.use((req, res, next) => {
-    console.log("New request made: ");
-    console.log("host: ", req.hostname);
-    console.log("path", req.path);
-    console.log("method: ", req.method);
-    next(); // to move to the next block
-});
+app.use(morgan("dev"));
+
+// static file server
+
+app.use(express.static("static"));
 
 app.get("/", (req, res) => {
     const blogs = [
