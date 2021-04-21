@@ -75,7 +75,7 @@ p {
 textarea {
     height: 120px;
 }
-.create-blog button, .delete {
+.create-blog button {
     margin-top: 20px;
     background:rgb(20, 147, 220);
     color: white;
@@ -84,6 +84,21 @@ textarea {
     font-size: 1.2em;
     cursor: pointer;
     border-radius: 5px;
+}
+.details {
+    position: relative;
+}
+.delete {
+    background:rgb(20, 147, 220);
+    color: white;
+    padding: 7px 10px;
+    border: none;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 .content {
     min-height: 55vh;
