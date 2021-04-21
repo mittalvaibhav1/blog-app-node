@@ -42,13 +42,19 @@ footer {
     margin: 80px auto 20px;
 }
 h2 {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 h3 {
     text-transform: capitalize;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
-.content {
+p {
+    margin-bottom: 5px;
+}
+.dets {
+    margin: 3em;
+}
+.content, .dets {
     margin-left: 20px;
 }
 .create-blog form {
@@ -69,7 +75,7 @@ h3 {
 textarea {
     height: 120px;
 }
-.create-blog button {
+.create-blog button, .delete {
     margin-top: 20px;
     background:rgb(20, 147, 220);
     color: white;
@@ -81,4 +87,13 @@ textarea {
 }
 .content {
     min-height: 55vh;
+}
+.blogs a {
+    display: block;
+    margin: 40px 0;
+    padding-left: 30px;
+    border-left: 6px solid crimson;
+}
+.blogs a:hover h3 {
+    color: crimson;
 }

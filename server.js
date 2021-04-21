@@ -60,6 +60,16 @@ app.post("/blogs", (req, res) => {
     .catch((err) => {
         console.log(err);
     })
+});
+
+app.get("/blogs/:id", (req, res) => {
+    Blog.findById(req.params.id)
+    .then((result) => {
+        res.render("blog", { title: "Blog Details", blog: result });
+    })
+    .catch((err) => {
+        console.log(err);
+    })
 })
 
 app.get("/blogs/create", (req, res) => {
