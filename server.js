@@ -31,6 +31,8 @@ app.use(morgan("dev"));
 
 app.use(express.static("static"));
 
+app.use(express.urlencoded({ extended: true }));
+
 app.get("/", (req, res) => {
     res.redirect("/blogs")
 });
@@ -48,6 +50,17 @@ app.get("/blogs", (req, res) => {
         console.log(err);
     })
 });
+
+app.post("/blogs", (req, res) => {
+    const blog = new Blog(req.body);
+    blog.save()
+    .then((result) => {
+        res.redirect("/blogs");
+    })
+    .catch((err) => {
+        console.log(err);
+    })
+})
 
 app.get("/blogs/create", (req, res) => {
     res.render("create", { title: "Create"});
