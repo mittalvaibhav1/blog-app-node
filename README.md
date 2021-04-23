@@ -1,2 +1,2 @@
-# node.js-practice
-This repo contains my node.js practice codes.
+# blog-app-node
+A simple blog app created using Node, Express and MongoDB.
